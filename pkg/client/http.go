@@ -74,11 +74,6 @@ type httpClient struct {
 	signer crypto.Signer
 }
 
-func (c *httpClient) CAInfo(ctx context.Context) (*response.CAInfo, error) {
-	//TODO implement me
-	panic("implement me")
-}
-
 func (c *httpClient) Register(ctx context.Context, req request.Registration) (string, error) {
 	//TODO implement me
 	panic("implement me")
