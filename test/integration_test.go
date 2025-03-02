@@ -34,6 +34,12 @@ func (s *FabricCACommonSuite) TestIteration(t provider.T) {
 			sCtx.Require().NoError(err)
 			sCtx.Require().NotNil(cli)
 		})
+		sCtx.WithNewStep("Get CA info", func(sCtx provider.StepCtx) {
+			info, err := cli.CAInfo(context.Background())
+			sCtx.Require().NoError(err)
+			sCtx.Require().NotNil(info)
+		})
+
 		sCtx.WithNewStep("Enroll CA admin certificate", func(sCtx provider.StepCtx) {
 			var (
 				err error
