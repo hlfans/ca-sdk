@@ -29,3 +29,6 @@ go.work.sum
 
 # VSCode
 .vscode
+
+# Allure results and reports
+allure-results
