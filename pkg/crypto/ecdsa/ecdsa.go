@@ -178,11 +178,3 @@ func getSignatureAlgorithm(algorithm string) (x509.SignatureAlgorithm, error) {
 	}
 	return x509.UnknownSignatureAlgorithm, errUnknownSignatureAlgorithm
 }
-
-// from gohfc
-func preventMalleability(k *ecdsa.PrivateKey, S *big.Int) {
-	halfOrder := ecCurveHalfOrders[k.Curve]
-	if S.Cmp(halfOrder) == 1 {
-		S.Sub(k.Params().N, S)
-	}
-}
